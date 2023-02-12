@@ -324,7 +324,7 @@ def main(args):
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument("--font-file", type=str, default="/home/hltcoe/mpost/code/fairseq-ocr/fairseq/data/visual/fonts/NotoMono-Regular.ttf")
+    parser.add_argument("--font-file", type=str, default="fairseq/data/visual/fonts/NotoSans-Regular.ttf")
     parser.add_argument("--font-size", type=int, default=DEFAULT_FONT_SIZE)
     parser.add_argument("--window", type=int, default=DEFAULT_WINDOW)
     parser.add_argument("--stride", type=int, default=DEFAULT_STRIDE)
