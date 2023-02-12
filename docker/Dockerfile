@@ -7,14 +7,14 @@ COPY . visrep
 
 WORKDIR visrep
 
-pip install --editable ./
-pip install -r examples/visual_text/requirements.txt
+RUN pip install --editable ./ && \
+    pip install -r examples/visual_text/requirements.txt
 
 # bug on nvcr
-pip install opencv-python==4.6.0.66 && \
+RUN pip install opencv-python==4.6.0.66 && \
     pip install opencv-python==4.5.5.64
 
-pip install sentencepiece
+RUN pip install sentencepiece
 
 
 RUN wget https://zenodo.org/record/5770933/files/de-en.zip && \
@@ -24,4 +24,4 @@ RUN wget https://zenodo.org/record/5770933/files/de-en.zip && \
 #RUN zenodo_get https://zenodo.org/record/5770933#.Y-gs6RxBxkg
 #RUN unzip WMT_de-en.zip
 
-python setup.py build_ext --inplace
+RUN python setup.py build_ext --inplace
